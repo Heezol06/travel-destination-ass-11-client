@@ -1,4 +1,5 @@
 import React from 'react';
+import {  Link, NavLink } from 'react-router-dom';
 
 const Nav = () => {
     return (
@@ -12,19 +13,50 @@ const Nav = () => {
     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
+        <NavLink
+            to="/home"
+            activeStyle={{
+              fontWeight: "bold",
+              color: "#198754"
+            }}
+            className="text-decoration-none ms-5"
+            style={{color:"gray"}}
+          >
+            Home
+        </NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">My orders</a>
+        <NavLink
+            to="/myOrders"
+            activeStyle={{
+              fontWeight: "bold",
+              color: "#198754"
+            }}
+            className="text-decoration-none ms-5"
+            style={{color:"gray"}}
+          >
+            My Orders
+        </NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <NavLink
+            to="/faq"
+            activeStyle={{
+              fontWeight: "bold",
+              color: "#198754"
+            }}
+            className="text-decoration-none ms-5"
+            style={{color:"gray"}}
+          >
+            Edit Orders
+        </NavLink>
         </li>
       </ul>
-      <form className="d-flex">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button className="btn btn-outline-success" type="submit">Search</button>
-      </form>
+        <div>
+        <Link to="/login">
+        <button className="btn btn-outline-success" type="submit">Login</button>
+        </Link>
+        </div>
     </div>
   </div>
 </nav>
