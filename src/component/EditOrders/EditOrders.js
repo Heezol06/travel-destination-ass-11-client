@@ -43,7 +43,7 @@ const EditOrders = () => {
     console.log(singleUsers);
     return (
         <div>
-            <h1 style={{color:"#59B6F1"}} className="text-decoration-underline">Edit Or Mentation All Order</h1>
+            <h1 style={{color:"#59B6F1"}} className="text-decoration-underline">Edit Or Maintaining All Order</h1>
             <img src="https://image.freepik.com/free-vector/angry-boss-with-megaphone-shouting-employees_74855-5720.jpg" className="img-sizing" alt="" />
            <div className="row d-flex order-sizing">
            {
