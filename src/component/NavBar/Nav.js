@@ -1,7 +1,14 @@
 import React from 'react';
 import {  Link, NavLink } from 'react-router-dom';
+import useAuth from '../Hook/useAuth';
 
 const Nav = () => {
+  const {user , logOut } = useAuth();
+  
+  const handleLogOut = () =>{
+    logOut()
+}
+// console.log(user);
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,8 +33,9 @@ const Nav = () => {
         </NavLink>
         </li>
         <li className="nav-item">
-        <NavLink
-            to="/myOrders"
+        {user?.email ?
+          <NavLink
+            to="/myBooking"
             activeStyle={{
               fontWeight: "bold",
               color: "#198754"
@@ -35,12 +43,14 @@ const Nav = () => {
             className="text-decoration-none ms-5"
             style={{color:"gray"}}
           >
-            My Orders
+            My Booking
         </NavLink>
+        : ""
+        }
         </li>
         <li className="nav-item">
         <NavLink
-            to="/faq"
+            to="/update"
             activeStyle={{
               fontWeight: "bold",
               color: "#198754"
@@ -51,11 +61,33 @@ const Nav = () => {
             Edit Orders
         </NavLink>
         </li>
+        <li className="nav-item">
+        <NavLink
+            to="/newPlan"
+            activeStyle={{
+              fontWeight: "bold",
+              color: "#198754"
+            }}
+            className="text-decoration-none ms-5"
+            style={{color:"gray"}}
+          >
+            Add Plans
+        </NavLink>
+        </li>
       </ul>
         <div>
+       {
+         user.email ?
+         <div>
+           <button className="btn btn-outline-danger" onClick={handleLogOut} type="submit">LogOut</button>
+           <img src={user.photoURL} className="rounded-circle w-25 ms-4" alt="" srcset="" />
+         </div> 
+         
+        :
         <Link to="/login">
         <button className="btn btn-outline-success" type="submit">Login</button>
-        </Link>
+        </Link> 
+        }
         </div>
     </div>
   </div>
