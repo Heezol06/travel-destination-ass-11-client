@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import useAuth from '../Hook/useAuth';
+import './MyBooking.css'
 
 const MyBooking = () => {
-    const [user , setUser] = useState([])
+    const {user} = useAuth()
+    const [users , setUser] = useState([])
     const [deleteCount, setDeleteCount] = useState(false)
     useEffect(()=>{
-        fetch("http://localhost:5000/users")
+        fetch(`https://quiet-ocean-52813.herokuapp.com/users`)
         .then(res => res.json())
         .then(result => setUser(result))
     },[deleteCount])
 
     const handleDelete = (id) =>{
-        fetch(`http://localhost:5000/deleteUser/${id}`,{
+        fetch(`https://quiet-ocean-52813.herokuapp.com/deleteUser/${id}`,{
             method: "DELETE",
             headers: {'content-type': 'application/json'},
         })
@@ -20,11 +22,14 @@ const MyBooking = () => {
         window.confirm("Are you sure you want to delete this Order!")
         // location.reload();
     }
+    const matchedUser=users.filter(u=>u.email=== user.email)
+console.log(matchedUser)
     return (
-        <div>
+        <div className="col-sm-12">
             <h2 style={{color:"#59b6ed"}} className="text-decoration-underline">Booking List</h2>
-            <img src="https://i.ibb.co/p0Mzw2W/undraw-Booked-re-vtod.png" alt="" />
-            <table className="table">
+            <img src="https://i.ibb.co/p0Mzw2W/undraw-Booked-re-vtod.png" className="img-sizing" alt="" />
+            <div className="table-sizing">
+            <table className="table col-sm-12 table-sizing">
             <thead>
                 <tr>
                 <th scope="col">Person Quantity</th>
@@ -36,14 +41,14 @@ const MyBooking = () => {
             </thead>
             <tbody>
                 {
-                    user.map(pd => (
-                <tr>
-                    <th scope="row">{pd.Quantity}</th>
+                    matchedUser.map(pd => (
+                <tr key={pd._id}>
+                    <th  scope="row">{pd.Quantity}</th>
                     <td>{pd.name}</td>
                     <td>{pd.email}</td>
                     <td>{pd.address}</td>
                     <td><button className="btn-danger me-2 rounded" onClick={()=>handleDelete(pd._id)}>Delete</button> 
-                    <Link to={`/update/${pd._id}`}><button className="btn-success rounded">Update</button></Link></td>
+                    </td>
                     <td></td>
                 </tr>
                     ))
@@ -51,6 +56,7 @@ const MyBooking = () => {
                 
             </tbody>
             </table>
+            </div>
                 
             </div>
     );

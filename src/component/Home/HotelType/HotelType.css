@@ -1,8 +1,5 @@
 @media only screen and (max-width: 768px) {
-  .discount {
+  .hotel {
     display: block !important;
-  }
-  .img-sizing {
-    width: 90%;
   }
 }

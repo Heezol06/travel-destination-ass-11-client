@@ -1,11 +1,12 @@
 import React from 'react';
+import "./HotelType.css"
 
 const HotelType = () => {
     return (
-        <div style={{backgroundColor:"#EDEDED", padding:"50px"}}>
+        <div className="col-sm-12" style={{backgroundColor:"#EDEDED", padding:"50px"}}>
             <h2>Find A Home Type</h2>
             <p className="fw-light">It is a long established fact that a reader</p>
-            <div className="d-flex container align-items-center justify-content-center" >
+            <div className="d-flex hotel container align-items-center justify-content-center" >
                 <div  className="col-lg-2" style={{backgroundColor:"white", padding:"20px", margin:"10px", borderRadius:"15px"}}>
                 <i className="fa-3x far fa-building"></i>
                 <h6>Apartment</h6>

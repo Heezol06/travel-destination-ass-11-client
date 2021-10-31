@@ -11,7 +11,7 @@ const AddPlans = () => {
         const img = urlRef.current.value;
         const newPlan = {name: name, descriptions: descriptions, img: img}
          //send data to the server
-  fetch(`http://localhost:5000/newPlan`, {
+  fetch(`http://srcSet:5000/newPlan`, {
     method: 'post', 
     headers: {
       'content-type' : 'application/json'

@@ -1,8 +1,8 @@
 @media only screen and (max-width: 768px) {
-  .discount {
-    display: block !important;
-  }
   .img-sizing {
     width: 90%;
+  }
+  .table-sizing {
+    width: 20%;
   }
 }

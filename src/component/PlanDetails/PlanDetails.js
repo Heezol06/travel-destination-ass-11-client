@@ -18,7 +18,7 @@ const PlanDetails = () => {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/services/${planId}`)
+        fetch(`https://quiet-ocean-52813.herokuapp.com/services/${planId}`)
         .then(res => res.json())
         .then(data => setPlanDetails(data))
     },[])
@@ -41,7 +41,7 @@ console.log(planDetails);
         const email = emailRef.current.value;
         const info ={name:name , email:email, address, Quantity, selectPlan};
 
-        fetch("http://localhost:5000/addUser" , {
+        fetch("https://quiet-ocean-52813.herokuapp.com/addUser" , {
             method: 'POST',
             headers: {'content-type': 'application/json' },
             body: JSON.stringify(info),
