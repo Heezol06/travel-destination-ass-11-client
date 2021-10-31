@@ -57,13 +57,13 @@ console.log(planDetails);
     //  console.log(planDetails);
     return (
         <div>
-        <div class="container w-75 my-5 card mb-3" style={{backgroundColor:""}}>
-            <img src={planDetails?.img} class="card-img-top mt-3" alt="..." />
-            <div class="card-body">
-                <h5 class="card-title">{planDetails?.name}</h5>
+        <div className="container w-75 my-5 card mb-3" style={{backgroundColor:""}}>
+            <img src={planDetails?.img} className="card-img-top mt-3" alt="..." />
+            <div className="card-body">
+                <h5 className="card-title">{planDetails?.name}</h5>
                 <h5>Price:{planDetails?.price}</h5>
-                <p class="card-text">{planDetails?.descriptions}</p>
-                <p class="card-text"><small class="text-muted">Schedule: {planDetails?.packages}</small></p>
+                <p className="card-text">{planDetails?.descriptions}</p>
+                <p className="card-text"><small className="text-muted">Schedule: {planDetails?.packages}</small></p>
             </div>
             </div>
 

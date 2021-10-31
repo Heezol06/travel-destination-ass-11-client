@@ -22,8 +22,9 @@ const MyBooking = () => {
     }
     return (
         <div>
-            <h2>your orders</h2>
-            <table class="table">
+            <h2 style={{color:"#59b6ed"}} className="text-decoration-underline">Booking List</h2>
+            <img src="https://i.ibb.co/p0Mzw2W/undraw-Booked-re-vtod.png" alt="" />
+            <table className="table">
             <thead>
                 <tr>
                 <th scope="col">Person Quantity</th>

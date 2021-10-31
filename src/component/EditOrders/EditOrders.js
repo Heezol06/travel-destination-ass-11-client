@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
 
 const EditOrders = () => {
     const [users , setUser] = useState([])
@@ -11,6 +10,8 @@ const EditOrders = () => {
     console.log(users);
     return (
         <div>
+            <h1 style={{color:"#59B6F1"}} className="text-decoration-underline">Edit Or Mentation All Order</h1>
+            <img src="https://image.freepik.com/free-vector/angry-boss-with-megaphone-shouting-employees_74855-5720.jpg" alt="" />
            <div className="row d-flex">
            {
                 users.map(user => <div className="col-lg-4 col-sm-6 p-3" style={{border:" 1px solid gray"}}>

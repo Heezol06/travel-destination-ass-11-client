@@ -24,7 +24,7 @@ const Nav = () => {
             to="/home"
             activeStyle={{
               fontWeight: "bold",
-              color: "#198754"
+              color: "#59B6F1"
             }}
             className="text-decoration-none ms-5"
             style={{color:"gray"}}
@@ -38,7 +38,7 @@ const Nav = () => {
             to="/myBooking"
             activeStyle={{
               fontWeight: "bold",
-              color: "#198754"
+              color: "#59B6F1"
             }}
             className="text-decoration-none ms-5"
             style={{color:"gray"}}
@@ -53,12 +53,12 @@ const Nav = () => {
             to="/update"
             activeStyle={{
               fontWeight: "bold",
-              color: "#198754"
+              color: "#59B6F1"
             }}
             className="text-decoration-none ms-5"
             style={{color:"gray"}}
           >
-            Edit Orders
+            Edit All Orders
         </NavLink>
         </li>
         <li className="nav-item">
@@ -66,7 +66,7 @@ const Nav = () => {
             to="/newPlan"
             activeStyle={{
               fontWeight: "bold",
-              color: "#198754"
+              color: "#59B6F1"
             }}
             className="text-decoration-none ms-5"
             style={{color:"gray"}}
@@ -80,7 +80,7 @@ const Nav = () => {
          user.email ?
          <div>
            <button className="btn btn-outline-danger" onClick={handleLogOut} type="submit">LogOut</button>
-           <img src={user.photoURL} className="rounded-circle w-25 ms-4" alt="" srcset="" />
+           <img src={user.photoURL} className="rounded-circle w-25 ms-4" alt="" srcSet="" />
          </div> 
          
         :

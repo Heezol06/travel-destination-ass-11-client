@@ -11,7 +11,7 @@ const Services = () => {
     return (
            <div className="container">
         <div className="row">
-            <h1 className="text-start mt-5" style={{borderBottom:"1.5px solid black"}}>Plans For You</h1>
+            <h1 className="text-start mt-5" style={{borderBottom:"1.5px solid #59B6F1", color:"#59B6F1"}}>Plans For You</h1>
            {
                     plans.map(plan => <Service
                 plan={plan}

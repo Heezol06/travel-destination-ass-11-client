@@ -10,6 +10,7 @@ import AuthProvider from './component/Context/AuthProvider';
 import MyBooking from './component/MyBooking/MyBooking';
 import EditOrders from './component/EditOrders/EditOrders';
 import AddPlans from './component/AddPlans/AddPlans';
+import NotFound from './component/NotFound/NotFound';
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
           <PrivetRoute path="/newPlan">
         <AddPlans></AddPlans>
         </PrivetRoute>
+        <Route exact path="*">
+            <NotFound></NotFound>
+        </Route>
       </Switch>
           <Footer></Footer>
       </BrowserRouter>
