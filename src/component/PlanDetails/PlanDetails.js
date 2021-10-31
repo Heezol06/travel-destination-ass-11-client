@@ -39,7 +39,7 @@ console.log(planDetails);
     const handleAddBooking = () =>{
         const name = nameRef.current.value;
         const email = emailRef.current.value;
-        const info ={name:name , email:email, address, Quantity, selectPlan};
+        const info ={name:name , email:email, address, Quantity, selectPlan, status: "Deny"};
 
         fetch("https://quiet-ocean-52813.herokuapp.com/addUser" , {
             method: 'POST',

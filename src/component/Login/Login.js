@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../Hook/useAuth';
+import './Login.css'
 
 const Login = () => {
     const {user , signInUsingGoogle,} = useAuth() || {};
@@ -15,9 +16,9 @@ const Login = () => {
         })
     }
     return (
-        <div className="d-flex">
-            <div className="col-lg-6">
-                <img src="https://i.ibb.co/yNZhfmv/undraw-Add-user-re-5oib.png" alt="" />
+        <div className="d-flex login-sizing">
+            <div className="col-lg-6 col-sm-12">
+                <img src="https://i.ibb.co/yNZhfmv/undraw-Add-user-re-5oib.png" className="img-sizing" alt="" />
             </div>
             <div className="col-lg-6 py-5 my-5">
                 <h1 style={{color:"#59B6F1"}} className="text-decoration-underline" >For More Info Signin Below</h1>
